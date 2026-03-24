@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<h1>Produtos</h1>
+
+<h2><%= edit ? "Editar Produto" : "Adicionar Produto" %></h2>
+
+<form action="<%= edit ? '/produtos/update/' + edit.id : '/produtos/add' %>" method="POST">
+    <input type="text" name="name" placeholder="Nome" value="<%= edit ? edit.name : '' %>" required>
+    <input type="number" name="price" placeholder="Preço" value="<%= edit ? edit.price : '' %>" required>
+    <button type="submit">Salvar</button>
+</form>
+
+<h2>Lista de Produtos</h2>
+
+<ul>
+    <% products.forEach(p => { %>
+        <li>
+            <%= p.name %> - R$ <%= p.price %>
+            <a href="/produtos/edit/<%= p.id %>">Editar</a>
+            <a href="/produtos/delete/<%= p.id %>">Excluir</a>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include('partials/footer') %>
