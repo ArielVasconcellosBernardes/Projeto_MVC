@@ -1,17 +1,33 @@
 <%- include('partials/header') %>
 
-<div class="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
-    <h1 class="text-3xl font-bold mb-4">Contato</h1>
+<div class="bg-white rounded-2xl shadow-xl p-10 max-w-xl mx-auto">
 
-    <form class="flex flex-col gap-3">
-        <input class="border p-2 rounded" type="text" placeholder="Nome">
-        <input class="border p-2 rounded" type="email" placeholder="Email">
-        <textarea class="border p-2 rounded" placeholder="Mensagem"></textarea>
+    <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">
+        Contato
+    </h1>
 
-        <button class="bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
-            Enviar
+    <form class="flex flex-col gap-4">
+
+        <input 
+            class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            type="text" placeholder="Nome">
+
+        <input 
+            class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            type="email" placeholder="Email">
+
+        <textarea 
+            class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            rows="4"
+            placeholder="Mensagem"></textarea>
+
+        <button 
+            class="bg-blue-600 text-white p-3 rounded-lg font-semibold shadow hover:bg-blue-700 hover:scale-[1.02] transition">
+            Enviar Mensagem
         </button>
+
     </form>
+
 </div>
 
 <%- include('partials/footer') %>
