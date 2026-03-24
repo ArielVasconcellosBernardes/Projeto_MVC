@@ -1,12 +1,17 @@
 <%- include('partials/header') %>
 
-<h1>Contato</h1>
+<div class="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
+    <h1 class="text-3xl font-bold mb-4">Contato</h1>
 
-<form>
-    <input type="text" placeholder="Nome"><br>
-    <input type="email" placeholder="Email"><br>
-    <textarea placeholder="Mensagem"></textarea><br>
-    <button>Enviar</button>
-</form>
+    <form class="flex flex-col gap-3">
+        <input class="border p-2 rounded" type="text" placeholder="Nome">
+        <input class="border p-2 rounded" type="email" placeholder="Email">
+        <textarea class="border p-2 rounded" placeholder="Mensagem"></textarea>
+
+        <button class="bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+            Enviar
+        </button>
+    </form>
+</div>
 
 <%- include('partials/footer') %>

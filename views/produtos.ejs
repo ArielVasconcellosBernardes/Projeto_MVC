@@ -1,25 +1,48 @@
 <%- include('partials/header') %>
 
-<h1>Produtos</h1>
+<div class="bg-white p-6 rounded-xl shadow-md">
+    <h1 class="text-3xl font-bold mb-4">Produtos</h1>
 
-<h2><%= edit ? "Editar Produto" : "Adicionar Produto" %></h2>
+    <h2 class="text-xl font-semibold mb-2">
+        <%= edit ? "Editar Produto" : "Adicionar Produto" %>
+    </h2>
 
-<form action="<%= edit ? '/produtos/update/' + edit.id : '/produtos/add' %>" method="POST">
-    <input type="text" name="name" placeholder="Nome" value="<%= edit ? edit.name : '' %>" required>
-    <input type="number" name="price" placeholder="Preço" value="<%= edit ? edit.price : '' %>" required>
-    <button type="submit">Salvar</button>
-</form>
+    <form 
+        action="<%= edit ? '/produtos/update/' + edit.id : '/produtos/add' %>" 
+        method="POST"
+        class="flex gap-2 mb-6"
+    >
+        <input class="border p-2 rounded w-full" type="text" name="name" placeholder="Nome" value="<%= edit ? edit.name : '' %>" required>
+        <input class="border p-2 rounded w-32" type="number" name="price" placeholder="Preço" value="<%= edit ? edit.price : '' %>" required>
 
-<h2>Lista de Produtos</h2>
+        <button class="bg-green-600 text-white px-4 rounded hover:bg-green-700">
+            Salvar
+        </button>
+    </form>
 
-<ul>
-    <% products.forEach(p => { %>
-        <li>
-            <%= p.name %> - R$ <%= p.price %>
-            <a href="/produtos/edit/<%= p.id %>">Editar</a>
-            <a href="/produtos/delete/<%= p.id %>">Excluir</a>
-        </li>
-    <% }) %>
-</ul>
+    <h2 class="text-xl font-semibold mb-2">Lista de Produtos</h2>
+
+    <ul class="space-y-2">
+        <% products.forEach(p => { %>
+            <li class="flex justify-between items-center bg-gray-100 p-3 rounded">
+                <span>
+                    <strong><%= p.name %></strong> - R$ <%= p.price %>
+                </span>
+
+                <div class="flex gap-2">
+                    <a href="/produtos/edit/<%= p.id %>" 
+                       class="bg-yellow-400 px-3 py-1 rounded hover:bg-yellow-500">
+                       Editar
+                    </a>
+
+                    <a href="/produtos/delete/<%= p.id %>" 
+                       class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                       Excluir
+                    </a>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>
 
 <%- include('partials/footer') %>
