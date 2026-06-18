@@ -1,31 +1,48 @@
 <%- include('partials/header') %>
 
-<h1 class="text-2xl font-bold mb-4">Contato</h1>
+<section class="contact-page">
+    <div class="contact-intro">
+        <span class="contact-tag">Fale conosco</span>
+        <h1>Contato</h1>
+        <p>
+            Envie sua mensagem para tirar duvidas, sugerir melhorias ou conversar
+            sobre o projeto MVC.
+        </p>
+    </div>
 
-<form class="flex flex-col gap-4 max-w-md border p-6 rounded 
-             transition hover:shadow-md">
+    <form class="contact-form flex flex-col gap-4 max-w-md border p-6 rounded transition hover:shadow-md">
 
-    <input 
-        type="text" 
-        placeholder="Nome"
-        class="border p-2 rounded"
-    >
+        <label>
+            <span>Nome</span>
+            <input 
+                type="text" 
+                placeholder="Seu nome"
+                class="border p-2 rounded"
+            >
+        </label>
 
-    <input 
-        type="email" 
-        placeholder="Email"
-        class="border p-2 rounded"
-    >
+        <label>
+            <span>Email</span>
+            <input 
+                type="email" 
+                placeholder="seu@email.com"
+                class="border p-2 rounded"
+            >
+        </label>
 
-    <textarea 
-        placeholder="Descrição"
-        class="border p-2 rounded"
-    ></textarea>
+        <label>
+            <span>Mensagem</span>
+            <textarea 
+                placeholder="Descreva sua mensagem"
+                class="border p-2 rounded"
+            ></textarea>
+        </label>
 
-    <button class="bg-gray-800 text-white p-2 rounded hover:bg-gray-900 transition">
-        Enviar
-    </button>
+        <button class="bg-gray-800 text-white p-2 rounded hover:bg-gray-900 transition">
+            Enviar mensagem
+        </button>
 
-</form>
+    </form>
+</section>
 
 <%- include('partials/footer') %>
