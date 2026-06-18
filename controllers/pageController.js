@@ -1,15 +1,39 @@
+/**
+ * @function login
+ * @param {import('express').Request} req - Objeto de requisição do Express.
+ * @param {import('express').Response} res - Objeto de resposta do Express, utilizado para renderizar a view `login`.
+ * @returns {void}
+ */
 exports.login = (req, res) => {
     res.render('login');
 };
 
+/**
+ * @function sobre
+ * @param {import('express').Request} req - Objeto de requisição do Express.
+ * @param {import('express').Response} res - Objeto de resposta do Express, utilizado para renderizar a view `sobre`.
+ * @returns {void}
+ */
 exports.sobre = (req, res) => {
     res.render('sobre');
 };
 
+/**
+ * @function contato
+ * @param {import('express').Request} req - Objeto de requisição do Express.
+ * @param {import('express').Response} res - Objeto de resposta do Express, utilizado para renderizar a view `contato`.
+ * @returns {void}
+ */
 exports.contato = (req, res) => {
     res.render('contato');
 };
 
+/**
+ * @function home
+ * @param {import('express').Request} req - Objeto de requisição do Express.
+ * @param {import('express').Response} res - Objeto de resposta do Express, utilizado para renderizar a view `home`.
+ * @returns {void}
+ */
 exports.home = (req, res) => {
     res.render('home');
 };
